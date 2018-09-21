@@ -2,6 +2,8 @@ const app = require('express')();
 const httpServer = require('http').Server(app);
 var io = require('socket.io')(httpServer);
 
+const PORT = process.env.PORT || 3000;
+
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html');
 });
