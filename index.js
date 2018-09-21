@@ -3,6 +3,7 @@ const httpServer = require('http').Server(app);
 var io = require('socket.io')(httpServer);
 
 const PORT = process.env.PORT || 3000;
+console.log(PORT);
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html');
@@ -14,6 +15,6 @@ io.on('connection', function(socket){
     });
 });
 
-httpServer.listen(8000, ()=>{
-    console.log('Server listening at port 8000');
+httpServer.listen(PORT, () => {
+    console.log(`Server listening at port ${PORT}`);
 });
